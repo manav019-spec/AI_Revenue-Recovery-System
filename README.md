@@ -126,9 +126,11 @@ This allows the recovery system to prioritize opportunities according to both re
 
 ## 4. Dataset
 
-The benchmark dataset contains 20,000 payment records.
+The benchmark dataset contains 20,000 payment records covering successful payments, failed payments, recovered payments, unrecovered payments, and escalated cases.
 
-The recovery analysis focuses on 6,284 failed payments.
+For the revenue-recovery modeling task, the system isolates 6,284 failed-payment records containing a defined payment decline reason.
+
+These 6,284 records form the primary recovery-analysis population.
 
 The dataset is synthetic and was created for experimentation and evaluation of the proposed recovery strategy.
 
@@ -144,7 +146,53 @@ It does not contain real Razorpay customer or payment information.
 | Calibration records   |  1,257 |
 | Test records          |  1,257 |
 
----
+The decline-reason counts are:
+```text
+2,868
++ 1,255
++   934
++   620
++   607
+---------
+  6,284
+```
+
+So **6,284 records have a decline reason**.
+
+That is:
+
+```text
+6,284 / 20,000 × 100 = 31.42%
+```
+
+So approximately **31.4% of the dataset is in the failed-payment recovery scope**.
+
+
+```text
+                    20,000 PAYMENT RECORDS
+                            |
+             +--------------+--------------+
+             |                             |
+             v                             v
+       General records              Failed-payment
+                                    recovery scope
+                                          |
+                                          v
+                                     6,284 records
+                                          |
+                   +----------+-----------+-----------+----------+
+                   |          |           |           |          |
+                   v          v           v           v          v
+             insufficient  server    card_expired  risk_hold  card_limit
+               funds       timeout
+```
+
+The **6,284** comes specifically from records that have a `decline_reason`.
+
+Therefore, our model is currently answering:
+
+> "Among failed payments, which ones are most likely to recover?"
+
 
 ## 5. Failed Payment Distribution
 
