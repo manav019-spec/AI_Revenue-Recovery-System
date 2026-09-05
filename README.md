@@ -715,7 +715,8 @@ AI_Revenue-Recovery-System/
 |   └── architecture.png
 |
 ├── data/
-|   └── README.md
+|   ├── small_revenue_recovery_dataset_5k.csv
+|   └── large_revenue_recovery_dataset_20k.csv
 |
 ├── graphs/
 |   ├── 01_ml_capacity_recovery.png
@@ -730,17 +731,7 @@ AI_Revenue-Recovery-System/
 |   └── 10_specialist_score_groups.png
 |
 ├── notebook/
-|   └── revenue_recovery.ipynb
-|
-├── src/
-|   ├── preprocessing.py
-|   ├── train.py
-|   ├── predict.py
-|   ├── policy_engine.py
-|   ├── recovery_engine.py
-|   └── audit.py
-|
-├── app.py
+|   └── AI_Revenue_recovery.ipynb
 ├── requirements.txt
 └── README.md
 ```
@@ -808,47 +799,7 @@ The machine-learning pipeline is implemented in Python, while the recovery polic
 
 ---
 
-## 25. Running the Project
-
-Clone the repository:
-
-```bash
-git clone <repository-url>
-```
-
-Move into the project directory:
-
-```bash
-cd AI_Revenue-Recovery-System
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Train the model:
-
-```bash
-python src/train.py
-```
-
-Generate predictions:
-
-```bash
-python src/predict.py
-```
-
-Run the demonstration application:
-
-```bash
-streamlit run app.py
-```
-
----
-
-## 26. Limitations
+## 25. Limitations
 
 This project is an offline research and prototype system.
 
@@ -880,7 +831,7 @@ A production deployment should incorporate actual payment, communication, operat
 
 ---
 
-## 27. Future Work
+## 26. Future Work
 
 ### Real Payment Data
 
@@ -935,7 +886,7 @@ Monitor:
 
 ---
 
-## 28. Key Results
+## 27. Key Results
 
 The primary global model produced the following benchmark results:
 
@@ -951,7 +902,7 @@ The primary global model produced the following benchmark results:
 
 ---
 
-## 29. Core Insight
+## 28. Core Insight
 
 The most important insight from the project is:
 
@@ -979,7 +930,7 @@ LEARN
 
 ---
 
-## 30. Project Status
+## 29. Project Status
 
 The current implementation demonstrates:
 
@@ -1007,9 +958,4 @@ The evaluation uses a synthetic benchmark dataset and offline results.
 
 The project does not claim access to Razorpay's production payment systems, customer data, or payment execution infrastructure.
 
-```
-
-### One change from your current GitHub
-
-Your README can now be the **main landing page** of the project. After replacing it, the next thing we should do is **fix the repository structure**, especially `src/`, `notebook/`, and `architecture/`, and make sure the README links to the actual files rather than describing files that don't exist yet.
 ```
