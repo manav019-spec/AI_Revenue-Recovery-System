@@ -102,9 +102,7 @@ P(Recovery | payment context)
 The probability can then be combined with the transaction amount:
 
 ```text
-Expected Recovery Value
-=
-P(Recovery) × Transaction Amount
+Expected Recovery Value = P(Recovery) × Transaction Amount
 ```
 
 For example:
@@ -114,10 +112,7 @@ Transaction Amount = ₹5,000
 
 Predicted Recovery Probability = 0.70
 
-Expected Recovery Value
-= 0.70 × ₹5,000
-
-= ₹3,500
+Expected Recovery Value = 0.70 × ₹5,000 = ₹3,500
 ```
 
 This allows the recovery system to prioritize opportunities according to both recovery likelihood and transaction value.
@@ -147,20 +142,6 @@ It does not contain real Razorpay customer or payment information.
 | Test records          |  1,257 |
 
 The decline-reason counts are:
-```text
-2,868
-+ 1,255
-+   934
-+   620
-+   607
----------
-  6,284
-```
-
-So **6,284 records have a decline reason**.
-
-That is:
-
 ```text
 6,284 / 20,000 × 100 = 31.42%
 ```
@@ -946,7 +927,7 @@ The current implementation demonstrates:
 * Deterministic recovery policies
 * Auditability design
 
-The next stage is to connect the trained model to the recovery-policy application and demonstrate the complete prediction-to-decision workflow.
+The project is presented as an offline prototype demonstrating the prediction, prioritization, and policy-design workflow for intelligent payment recovery.
 
 ---
 
