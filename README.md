@@ -1,8 +1,5 @@
-# AI_Revenue-Recovery-System
-Razorpay AI Buildathon 2026 — Track 03: AI Revenue Recovery
-
 # AI Revenue Recovery System
-
+Razorpay AI Buildathon 2026 — Track 03: AI Revenue Recovery
 > **Recover the payments most worth recovering — not every failed payment.**
 
 An AI-powered revenue recovery system that predicts the probability of recovering a failed payment, prioritizes high-value recovery opportunities, applies deterministic recovery policies, and maintains an auditable decision trail.
